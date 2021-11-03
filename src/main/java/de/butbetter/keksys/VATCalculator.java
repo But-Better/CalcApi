@@ -11,10 +11,6 @@ public class VATCalculator implements Calculator {
 
 	@Override
 	public Float calculateVAT(float input, float percent) {
-		try {
-			return ((input / 100) * percent) + input;
-		} catch (Exception e) {
-			return (float) 0;
-		}
+		return ((input / 100) * percent) + input;
 	}
 }
