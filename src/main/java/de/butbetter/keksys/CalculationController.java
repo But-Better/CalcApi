@@ -1,18 +1,35 @@
 package de.butbetter.keksys;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class CalculationController {
 
-    @Autowired
-    private Calculator calculator;
+    private static final Logger logger = LoggerFactory.getLogger(CalculationController.class);
+
+    //@Autowired
+    //private Calculator calculator;
 
     @GetMapping("/VAT")
-    public String calculation() {
-        return "Hello WOrld";
+    public ResponseEntity<Float> calculation(@RequestParam(value = "input") Float input, @RequestParam(value = "percent") Float percent) {
+        logger.info(new StringBuilder()
+                .append("Input: ")
+                .append(input.toString())
+                .append(" Percent: ")
+                .append(percent)
+                .toString()
+        );
+
+        return new ResponseEntity<>(
+                input//calculator.calculateVAT(input, percent)
+                , HttpStatus.OK
+        );
     }
 }
