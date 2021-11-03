@@ -2,16 +2,16 @@ package de.butbetter.keksys;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.cache.support.NullValue;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class VATCalculatorTest {
 
-	VATCalculator calc;
+	Calculator calc;
 
 	@BeforeEach
-	void setUp() {
+	void setup() {
 		calc = new VATCalculator();
 	}
 
@@ -26,5 +26,14 @@ class VATCalculatorTest {
 		assertEquals(100, calc.calculateVAT(100, 0));
 	}
 
+	@Test
+	void calculateNegativeNumber() {
+		assertEquals(0, calc.calculateVAT(-50, 19));
+		assertEquals(100, calc.calculateVAT(100, -256));
+	}
 
+	@Test
+	void calculateMax() {
+		assertThrows(IllegalArgumentException.class, () -> calc.calculateVAT(Float.MAX_VALUE, 1));
+	}
 }
