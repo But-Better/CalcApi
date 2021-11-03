@@ -11,6 +11,9 @@ public class VATCalculator implements Calculator {
 
 	@Override
 	public Float calculateVAT(float input, float percent) {
+		input = Math.max(0, input);
+		percent = Math.max(0, percent);
+
 		return ((input / 100) * percent) + input;
 	}
 }
