@@ -24,10 +24,10 @@ public class CalculationController {
      * @return ResponseEntity if all correct you will get HttpStatus.OK and VAT result as json
      */
     @GetMapping("/VAT")
-    public ResponseEntity<Float> calculation(@RequestParam(value = "input") Float input, @RequestParam(value = "percent") Float percent) {
+    public ResponseEntity<Float> calculation(@RequestParam(value = "input", defaultValue = "0") float input, @RequestParam(value = "percent", defaultValue = "0") float percent) {
         logger.info(new StringBuilder()
                 .append("Input: ")
-                .append(input.toString())
+                .append(input)
                 .append(" Percent: ")
                 .append(percent)
                 .toString()
