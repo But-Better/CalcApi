@@ -10,7 +10,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class CalculationControllerTests {
 
     @Autowired
-    private CalcuationController calcuationController;
+    private CalculationController calcuationController;
 
     @Test
     void contextLoads() {
