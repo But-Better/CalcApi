@@ -13,12 +13,12 @@ public class VATCalculator implements Calculator {
 	public Float calculateVAT(float input, float percent) throws IllegalArgumentException {
 		input = Math.max(0, input);
 		percent = Math.max(0, percent);
-		float ret = ((input / 100) * percent) + input;
-		if (Float.isInfinite(ret)) {
+		float return_value = ((input / 100) * percent) + input;
+		if (Float.isInfinite(return_value)) {
 			String message = "the calculated value is larger than the given type, therefore it will be infinite";
 			log.error(message);
 			throw new IllegalArgumentException(message);
 		}
-		return ret;
+		return return_value;
 	}
 }
