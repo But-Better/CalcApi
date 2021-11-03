@@ -17,6 +17,12 @@ public class CalculationController {
     //@Autowired
     //private Calculator calculator;
 
+    /**
+     * GET-Request for VAT Calculation
+     * @param input = 0 - Float.Max
+     * @param percent = 0 - Float.Max
+     * @return ResponseEntity if all correct you will get HttpStatus.OK and VAT result as json
+     */
     @GetMapping("/VAT")
     public ResponseEntity<Float> calculation(@RequestParam(value = "input") Float input, @RequestParam(value = "percent") Float percent) {
         logger.info(new StringBuilder()
