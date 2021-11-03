@@ -13,6 +13,7 @@ public interface Calculator {
 	 * @param input input value
 	 * @param percent percentage to add
 	 * @return value plus percentage of that value
+	 * @throws IllegalArgumentException thrown, if calculated value is bigger than float allows
 	 */
-	Float calculateVAT(float input, float percent);
+	Float calculateVAT(float input, float percent) throws IllegalArgumentException;
 }
