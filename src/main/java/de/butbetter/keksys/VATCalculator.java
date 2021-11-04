@@ -17,7 +17,7 @@ public class VATCalculator implements Calculator {
 		if (Float.isInfinite(return_value)) {
 			String message = "the calculated value is larger than the given type, therefore it will be infinite";
 			log.error(message);
-			throw new IllegalArgumentException(message);
+			throw new ArithmeticException(message);
 		}
 		return return_value;
 	}
