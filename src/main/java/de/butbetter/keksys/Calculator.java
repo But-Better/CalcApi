@@ -5,7 +5,7 @@ public interface Calculator {
 	/**
 	 * takes a value and a percentage,
 	 * and returns the value with the
-	 * given percentage of that value on op
+	 * given percentage of that value on top
 	 *
 	 * when given negative values, the value will
 	 * be instead changed to 0 and the rest will continue
