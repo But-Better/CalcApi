@@ -12,5 +12,5 @@ public interface Calculator {
 	 * @return value plus percentage of that value
 	 * @throws IllegalArgumentException thrown, if calculated value is bigger than float allows
 	 */
-	Float calculateVAT(float price, float percent) throws IllegalArgumentException;
+	Float calculateVAT(float price, float percent) throws IllegalArgumentException, ArithmeticException;
 }
