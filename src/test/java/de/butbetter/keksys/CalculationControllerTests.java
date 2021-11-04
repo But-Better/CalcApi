@@ -29,8 +29,4 @@ public class CalculationControllerTests {
         assertEquals(this.calcuationController.calculation(-1, 100).getStatusCode(), HttpStatus.OK);
     }
 
-    @Test
-    void sendParameterDoubleMaxAndDoubleMin() {
-        assertEquals(this.calcuationController.calculation(Float.MAX_VALUE + Float.MAX_VALUE, Float.MIN_VALUE + 1).getStatusCode(), HttpStatus.OK);
-    }
 }
