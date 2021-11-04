@@ -30,13 +30,7 @@ public class CalculationController {
             @RequestParam(value = "input", defaultValue = "0") float input,
             @RequestParam(value = "percent", defaultValue = "0") float percent
     ) {
-        logger.info(new StringBuilder()
-                .append("Input: ")
-                .append(input)
-                .append(" Percent: ")
-                .append(percent)
-                .toString()
-        );
+        logger.info("Input: " + input + " Percent: " + percent);
 
         HashMap<String, Float> map = new HashMap<>();
         map.put("VAT-result", input);
