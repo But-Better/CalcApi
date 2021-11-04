@@ -23,6 +23,6 @@ public class VATCalculator implements Calculator {
 			log.error(message);
 			throw new ArithmeticException(message);
 		}
-		return return_value;
+		return priceWithVAT;
 	}
 }
