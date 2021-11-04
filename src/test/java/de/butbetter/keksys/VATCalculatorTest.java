@@ -28,12 +28,12 @@ class VATCalculatorTest {
 
 	@Test
 	void calculateNegativeNumber() {
-		assertEquals(0, calc.calculateVAT(-50, 19));
-		assertEquals(100, calc.calculateVAT(100, -256));
+		assertThrows(IllegalArgumentException.class, () -> calc.calculateVAT(-50, 19));
+		assertThrows(IllegalArgumentException.class, () -> calc.calculateVAT(100, -256));
 	}
 
 	@Test
 	void calculateMax() {
-		assertThrows(IllegalArgumentException.class, () -> calc.calculateVAT(Float.MAX_VALUE, 1));
+		assertThrows(ArithmeticException.class, () -> calc.calculateVAT(Float.MAX_VALUE, 1));
 	}
 }
