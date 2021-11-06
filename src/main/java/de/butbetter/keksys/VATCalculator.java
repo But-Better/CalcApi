@@ -17,12 +17,23 @@ public class VATCalculator implements Calculator {
 			log.error(message);
 			throw new IllegalArgumentException(message);
 		}
+
 		float priceWithVAT = ((price / 100) * percent) + price;
-		if (Float.isInfinite(priceWithVAT)) {
+		return getInfinitySaveFloat(priceWithVAT);
+	}
+
+	/**
+	 * Float checker for infinity
+	 * @param input potential infinity float value
+	 * @return float
+	 * @throws ArithmeticException thrown, if input value is infinite ()
+	 */
+	private Float getInfinitySaveFloat(Float input) throws ArithmeticException {
+		if (Float.isInfinite(input)) {
 			String message = "the calculated value is larger than the given type, therefore it will be infinite";
 			log.error(message);
 			throw new ArithmeticException(message);
 		}
-		return priceWithVAT;
+		return input;
 	}
 }
