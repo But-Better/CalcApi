@@ -11,7 +11,7 @@ public class CalculationValidator implements Calculator {
     private static final Logger log = LoggerFactory.getLogger(CalculationValidator.class);
 
     @Autowired
-    Calculator calculator;
+    private Calculator calculator;
 
     @Override
     public Float calculateVAT(float price, float percent) throws IllegalArgumentException, ArithmeticException {
