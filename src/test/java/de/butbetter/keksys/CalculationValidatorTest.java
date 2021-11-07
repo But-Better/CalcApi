@@ -46,10 +46,8 @@ class CalculationValidatorTest {
     //calculated Results, that are too big for float, throw an exception
     @Test
     void tooBigException() {
-        //System.out.println("Float Max = " + Float.MAX_VALUE);
-        //System.out.println("Float Max calc = " + calc.calculateVAT(Float.MAX_VALUE, 0));
         assertThrows(ArithmeticException.class, () -> calc.calculateVAT(Float.MAX_VALUE, 1));
-        assertThrows(ArithmeticException.class, () -> calc.calculateVAT(100, Float.MAX_VALUE));
+        assertThrows(ArithmeticException.class, () -> calc.calculateVAT(1000, Float.MAX_VALUE));
         assertThrows(ArithmeticException.class, () -> calc.calculateVAT(Float.MAX_VALUE, Float.MAX_VALUE));
 
     }
