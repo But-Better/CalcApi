@@ -30,8 +30,8 @@ public class CalculationController {
      */
     @GetMapping("/VAT")
     public ResponseEntity<Object> calculation(
-            @RequestParam(value = "price", defaultValue = "0") float price,
-            @RequestParam(value = "percent", defaultValue = "0") float percent
+            @RequestParam(value = "price") float price,
+            @RequestParam(value = "percent") float percent
     ) {
         logger.info("Input: " + price + " Percent: " + percent);
 
