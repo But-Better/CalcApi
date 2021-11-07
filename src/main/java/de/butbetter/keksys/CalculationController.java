@@ -11,12 +11,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @RequestMapping("calc/v1/")
 public class CalculationController {
 
     private static final Logger logger = LoggerFactory.getLogger(CalculationController.class);
+    private static final String JSON_VAT_NAME = "VAT-Result";
 
     @Autowired
     private CalculationValidator calculationValidator;
@@ -37,7 +40,11 @@ public class CalculationController {
         try {
             Float result = calculationValidator.calculateVAT(price, percent);
             logger.info("Price: " + price + " Percent: " + percent);
-            return new ResponseEntity<>(result, HttpStatus.OK);
+
+            Map<String, Float> jsonObject = new HashMap<>();
+            jsonObject.put(JSON_VAT_NAME, result);
+
+            return new ResponseEntity<>(jsonObject, HttpStatus.OK);
 
         } catch (IllegalArgumentException | ArithmeticException e) {
             logger.error("Message. " + e.getMessage() + " , " + Arrays.toString(e.getStackTrace()));
