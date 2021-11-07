@@ -21,22 +21,22 @@ public class CalculationController {
     /**
      * GET-Request for VAT Calculation
      *
-     * @param input   = 0 - Float.Max
+     * @param price   = 0 - Float.Max
      * @param percent = 0 - Float.Max
      * @return ResponseEntity if all correct you will get HttpStatus.OK and VAT result as json
      */
     @GetMapping("/VAT")
     public ResponseEntity<Object> calculation(
-            @RequestParam(value = "input", defaultValue = "0") float input,
+            @RequestParam(value = "price", defaultValue = "0") float price,
             @RequestParam(value = "percent", defaultValue = "0") float percent
     ) {
-        logger.info("Input: " + input + " Percent: " + percent);
+        logger.info("Input: " + price + " Percent: " + percent);
 
-        HashMap<String, Float> map = new HashMap<>();
-        map.put("VAT-result", input);
+        HashMap<String, Float> results = new HashMap<>();
+        results.put("priceWithVAT", price);
 
         return new ResponseEntity<>(
-                map//calculator.calculateVAT(input, percent)
+                results//calculator.calculateVAT(input, percent)
                 , HttpStatus.OK
         );
     }
