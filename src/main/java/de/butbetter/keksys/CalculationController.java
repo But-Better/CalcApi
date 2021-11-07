@@ -27,8 +27,8 @@ public class CalculationController {
     /**
      * GET-Request for VAT Calculation
      *
-     * @param price   = 0 - Float.Max
-     * @param percent = 0 - Float.Max
+     * @param price   = price like 40, 500 or 100000000
+     * @param percent = VAT percent value like 40%, 10% and 1%
      * @return ResponseEntity if all correct you will get HttpStatus.OK and VAT result as json
      */
     @GetMapping("/VAT")
@@ -39,7 +39,7 @@ public class CalculationController {
 
         try {
             Float result = calculationValidator.calculateVAT(price, percent);
-            logger.info("Price: " + price + " Percent: " + percent);
+            logger.info("Price: " + price + " Percent: " + percent + " Result= " + result);
 
             Map<String, Float> jsonObject = new HashMap<>();
             jsonObject.put(JSON_VAT_NAME, result);
