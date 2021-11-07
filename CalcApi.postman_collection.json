@@ -189,6 +189,50 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Float.Min_Value",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/calc/v1/VAT?price=1.4E-45&percent=1.4E-45",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"calc",
+						"v1",
+						"VAT"
+					],
+					"query": [
+						{
+							"key": "price",
+							"value": "1.4E-45"
+						},
+						{
+							"key": "percent",
+							"value": "1.4E-45"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
