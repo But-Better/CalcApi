@@ -1,0 +1,197 @@
+{
+	"info": {
+		"_postman_id": "a0ad38ad-0f9a-4b1d-9859-49cec6e60b53",
+		"name": "CalcApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "PercentIsWrong",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/calc/v1/VAT?input=5&percent=%",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"calc",
+						"v1",
+						"VAT"
+					],
+					"query": [
+						{
+							"key": "input",
+							"value": "5"
+						},
+						{
+							"key": "percent",
+							"value": "%"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AllParameterAreRight",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/calc/v1/VAT?input=50&percent=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"calc",
+						"v1",
+						"VAT"
+					],
+					"query": [
+						{
+							"key": "input",
+							"value": "50"
+						},
+						{
+							"key": "percent",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetDefaultURL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/calc/v1/VAT",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"calc",
+						"v1",
+						"VAT"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PriceIsWrong",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/calc/v1/VAT?input=$&percent=45",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"calc",
+						"v1",
+						"VAT"
+					],
+					"query": [
+						{
+							"key": "input",
+							"value": "$"
+						},
+						{
+							"key": "percent",
+							"value": "45"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/VAT?input=5&percent=%",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/VAT?input=5&percent=%",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"VAT"
+					],
+					"query": [
+						{
+							"key": "input",
+							"value": "5"
+						},
+						{
+							"key": "percent",
+							"value": "%"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetURLWIthVersion",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/VAT",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"VAT"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

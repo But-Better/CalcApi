@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class VATCalculatorTest {
 
-	Calculator calc;
+	private VATCalculator calc;
 
 	@BeforeEach
 	void setup() {

@@ -9,12 +9,8 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 @SpringBootTest
 class CalculationValidatorTest {
 
-    private Calculator calc;
-
-    @BeforeEach
-    void setup() {
-        calc = new CalculationValidator();
-    }
+    @Autowired
+    private CalculationValidator calc;
 
     @Test
     void calculateNegativeNumber() {
@@ -22,7 +18,6 @@ class CalculationValidatorTest {
         assertThrows(IllegalArgumentException.class, () -> calc.calculateVAT(100, -256));
     }
 
-    // integration test, implement after stage
     @Test
     void calculateMax() {
         assertThrows(ArithmeticException.class, () -> calc.calculateVAT(Float.MAX_VALUE, 1));
