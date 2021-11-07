@@ -4,10 +4,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import java.text.DecimalFormat;
+
 @Service
 class VATCalculator implements Calculator {
 
 	private static final Logger log = LoggerFactory.getLogger(VATCalculator.class);
+
+	private static final DecimalFormat df = new DecimalFormat("0.00");
 
 	@Override
 	public Float calculateVAT(float price, float percent) {
@@ -20,7 +24,6 @@ class VATCalculator implements Calculator {
 	 * rounds the value up to a given decimal point
 	 */
 	private float roundTo2DecimalPoints(float value) {
-		float d = (float) Math.pow(10, 2);
-		return Math.round(value * d) / d;
+		return Float.parseFloat(df.format(value));
 	}
 }
