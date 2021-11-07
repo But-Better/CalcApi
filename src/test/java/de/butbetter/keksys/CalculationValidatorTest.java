@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class CalculationValidatorTest {
+class CalculationValidatorTest {
 
     Calculator calc;
 
@@ -26,4 +26,5 @@ public class CalculationValidatorTest {
         assertTrue(false);
         // assertThrows(ArithmeticException.class, () -> calc.calculateVAT(Float.MAX_VALUE, 1));
     }
+
 }
