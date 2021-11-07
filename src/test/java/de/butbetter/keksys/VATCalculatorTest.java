@@ -24,4 +24,9 @@ class VATCalculatorTest {
 		assertEquals(0, calc.calculateVAT(0, 19));
 		assertEquals(100, calc.calculateVAT(100, 0));
 	}
+
+	@Test
+	void maxAndNullCalc() {
+		assertEquals(Float.MAX_VALUE, calc.calculateVAT(Float.MAX_VALUE, 0));
+	}
 }
