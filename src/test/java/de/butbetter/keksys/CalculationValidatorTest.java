@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CalculationValidatorTest {
 
-    Calculator calc;
+    private Calculator calc;
 
     @BeforeEach
     void setup() {
@@ -23,7 +23,7 @@ class CalculationValidatorTest {
     // integration test, implement after stage
     @Test
     void calculateMax() {
-        assertTrue(false);
+        fail();
         // assertThrows(ArithmeticException.class, () -> calc.calculateVAT(Float.MAX_VALUE, 1));
     }
 
