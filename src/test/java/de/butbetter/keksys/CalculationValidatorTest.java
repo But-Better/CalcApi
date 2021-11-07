@@ -1,10 +1,12 @@
 package de.butbetter.keksys;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
+@SpringBootTest
 class CalculationValidatorTest {
 
     private Calculator calc;
@@ -23,8 +25,7 @@ class CalculationValidatorTest {
     // integration test, implement after stage
     @Test
     void calculateMax() {
-        fail();
-        // assertThrows(ArithmeticException.class, () -> calc.calculateVAT(Float.MAX_VALUE, 1));
+        assertThrows(ArithmeticException.class, () -> calc.calculateVAT(Float.MAX_VALUE, 1));
     }
 
 }
