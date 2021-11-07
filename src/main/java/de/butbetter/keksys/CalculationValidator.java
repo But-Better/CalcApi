@@ -15,7 +15,7 @@ public class CalculationValidator implements Calculator {
 
     @Override
     public Float calculateVAT(float price, float percent) throws IllegalArgumentException, ArithmeticException {
-        below0(price, percent);
+        belowThanZero(price, percent);
         Float priceWithVAT = calculator.calculateVAT(price, percent);
         priceWithVATInfinityCheck(priceWithVAT);
         return priceWithVAT;
@@ -28,7 +28,7 @@ public class CalculationValidator implements Calculator {
      * @param percent potentially below 0
      * @throws IllegalArgumentException if both or one of the inputs is below 0
      */
-    private void below0(Float price, Float percent) {
+    private void belowThanZero(Float price, Float percent) {
         if (price < 0 || percent < 0) {
             String message = "either the given input: " + price + " or the percentage: " + percent + " was negative, " +
                     "which is not supported by this method";
