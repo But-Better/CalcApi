@@ -20,11 +20,10 @@ public class CalculationValidatorTest {
         assertThrows(IllegalArgumentException.class, () -> calc.calculateVAT(100, -256));
     }
 
+    // integration test, implement after stage
     @Test
     void calculateMax() {
         assertTrue(false);
         // assertThrows(ArithmeticException.class, () -> calc.calculateVAT(Float.MAX_VALUE, 1));
-
     }
-
 }
