@@ -82,6 +82,19 @@
 		},
 		{
 			"name": "GetDefaultURL",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -103,6 +116,19 @@
 		},
 		{
 			"name": "PriceIsWrong",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -126,35 +152,6 @@
 						{
 							"key": "percent",
 							"value": "45"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8080/VAT?input=5&percent=%",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/VAT?price=5&percent=%",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"VAT"
-					],
-					"query": [
-						{
-							"key": "price",
-							"value": "5"
-						},
-						{
-							"key": "percent",
-							"value": "%"
 						}
 					]
 				}
