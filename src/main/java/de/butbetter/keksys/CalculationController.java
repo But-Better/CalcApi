@@ -39,8 +39,7 @@ public class CalculationController {
 
         try {
             Float result = calculationValidator.calculateVAT(price, percent);
-            logger.info("Price: " + price + " Percent: " + percent + " Result= " + result);
-
+            logger.info(String.format("(%.2f / 100) * %.2f) + %.2f = %.2f", price, percent, price, result));
             Map<String, Float> jsonObject = new HashMap<>();
             jsonObject.put(JSON_VAT_NAME, result);
 
