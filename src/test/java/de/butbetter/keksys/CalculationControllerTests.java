@@ -26,7 +26,7 @@ public class CalculationControllerTests {
 
     @Test
     void sendParameterMinus1and100() {
-        assertEquals(this.calcuationController.calculation(-1, 100).getStatusCode(), HttpStatus.OK);
+        assertEquals(this.calcuationController.calculation(-1, 100).getStatusCode(), HttpStatus.BAD_REQUEST);
     }
 
 }
