@@ -9,12 +9,10 @@ class VATCalculator implements Calculator {
 
 	private static final Logger log = LoggerFactory.getLogger(VATCalculator.class);
 
-	private static final int ONEHUNDRED = 100;
-
 	@Override
 	public Float calculateVAT(float price, float percent) {
-		float return_value = ((price / ONEHUNDRED) * percent) + price;
-		log.info("price: " + price + " + percent = " + return_value);
+		float return_value = ((price / 100) * percent) + price;
+		log.info(price + " + " + percent + " = " + return_value);
 		return return_value;
 	}
 }
