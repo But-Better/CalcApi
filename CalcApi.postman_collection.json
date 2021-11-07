@@ -24,7 +24,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/calc/v1/VAT?input=5&percent=%",
+					"raw": "http://localhost:8080/calc/v1/VAT?price=5&percent=%",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -37,7 +37,7 @@
 					],
 					"query": [
 						{
-							"key": "input",
+							"key": "price",
 							"value": "5"
 						},
 						{
@@ -55,7 +55,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/calc/v1/VAT?input=50&percent=4",
+					"raw": "http://localhost:8080/calc/v1/VAT?price=50&percent=4",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -68,7 +68,7 @@
 					],
 					"query": [
 						{
-							"key": "input",
+							"key": "price",
 							"value": "50"
 						},
 						{
@@ -107,7 +107,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/calc/v1/VAT?input=$&percent=45",
+					"raw": "http://localhost:8080/calc/v1/VAT?price=$&percent=45",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -120,7 +120,7 @@
 					],
 					"query": [
 						{
-							"key": "input",
+							"key": "price",
 							"value": "$"
 						},
 						{
@@ -138,7 +138,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/VAT?input=5&percent=%",
+					"raw": "http://localhost:8080/VAT?price=5&percent=%",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -149,7 +149,7 @@
 					],
 					"query": [
 						{
-							"key": "input",
+							"key": "price",
 							"value": "5"
 						},
 						{
