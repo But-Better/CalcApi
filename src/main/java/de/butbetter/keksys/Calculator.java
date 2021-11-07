@@ -1,7 +1,6 @@
 package de.butbetter.keksys;
 
 public interface Calculator {
-
 	/**
 	 * takes a price and a percentage, and returns the value with the given percentage of that value on top
 	 *
