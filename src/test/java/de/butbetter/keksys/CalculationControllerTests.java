@@ -59,4 +59,10 @@ public class CalculationControllerTests {
         assertEquals(this.calcuationController.calculation(Float.MIN_VALUE, Float.MAX_VALUE).getStatusCode(), HttpStatus.OK);
     }
 
+    @Test
+    void sendParameterTooBig(){
+        assertEquals(this.calcuationController.calculation(Float.MAX_VALUE, Float.MAX_VALUE).getStatusCode(), HttpStatus.BAD_REQUEST);
+
+    }
+
 }
