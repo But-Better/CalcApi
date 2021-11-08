@@ -7,7 +7,7 @@ public interface Calculator {
 	 * @param price   input value
 	 * @param percent percentage to add
 	 *
-	 * @return value plus percentage of that value
+	 * @return value plus percentage of that value rounded to two decimal places
 	 *
 	 * @throws IllegalArgumentException thrown, if the input was negative
 	 * @throws ArithmeticException      thrown, if the calculated output would be greater, than the type allows

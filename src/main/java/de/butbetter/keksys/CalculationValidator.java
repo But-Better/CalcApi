@@ -22,11 +22,11 @@ public class CalculationValidator implements Calculator {
     }
 
     /**
-     * takes price and percent input for VAT Calculation and checks if they or one of them are/is below 0
+     * takes price and percent input for VAT Calculation and checks if one or both are below 0
      *
      * @param price   potentially below 0
      * @param percent potentially below 0
-     * @throws IllegalArgumentException if both or one of the inputs is below 0
+     * @throws IllegalArgumentException if one or both of the inputs are below 0
      */
     private void belowThanZero(Float price, Float percent) {
         if (price < 0 || percent < 0) {
