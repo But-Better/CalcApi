@@ -33,6 +33,25 @@ class VATCalculatorTest {
 	@Test
 	void infinityReturnValue(){
 		assertEquals(Float.POSITIVE_INFINITY, calc.calculateVAT(Float.MAX_VALUE, 1));
+	}
 
+	@Test
+	void roundingMin() {
+		assertEquals(0, calc.calculateVAT(Float.MIN_VALUE, 1));
+	}
+
+	@Test
+	void calculateNullAndMax() {
+		assertEquals(0, calc.calculateVAT(0, Float.MAX_VALUE));
+	}
+
+	@Test
+	void NullOfNullCalculation() {
+		assertEquals(0, calc.calculateVAT(0, 0));
+	}
+
+	@Test
+	void potentialMisrepresentationOfNullPointOne() {
+		assertEquals(10.1f, calc.calculateVAT(10, 1));
 	}
 }
