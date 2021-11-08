@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.text.DecimalFormat;
 
 @Service
 class VATCalculator implements Calculator {
@@ -25,7 +24,12 @@ class VATCalculator implements Calculator {
 	 * returns infinity if value is infinity
 	 */
 	private float roundTo2DecimalPoints(float value) {
-		if(Float.isInfinite(value)) return value;
-		return new BigDecimal(value).setScale(2, RoundingMode.HALF_UP).floatValue();
+		try {
+			return new BigDecimal(value).setScale(2, RoundingMode.HALF_UP).floatValue();
+		} catch (NumberFormatException e) {
+			String message = "can't round " + value + ", just giving it back";
+			log.error(message);
+			return value;
+		}
 	}
 }
