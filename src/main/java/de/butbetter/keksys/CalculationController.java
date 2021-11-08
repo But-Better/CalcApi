@@ -38,10 +38,10 @@ public class CalculationController {
     ) {
 
         try {
-            Float result = calculationValidator.calculateVAT(price, percent);
-            logger.info(String.format("(%.2f / 100) * %.2f) + %.2f = %.2f", price, percent, price, result));
+            Float resultWithVAT = calculationValidator.calculateVAT(price, percent);
+            logger.info(String.format("(%.2f / 100) * %.2f) + %.2f = %.2f", price, percent, price, resultWithVAT));
             Map<String, Float> jsonObject = new HashMap<>();
-            jsonObject.put(JSON_VAT_NAME, result);
+            jsonObject.put(JSON_VAT_NAME, resultWithVAT);
 
             return new ResponseEntity<>(jsonObject, HttpStatus.OK);
 
