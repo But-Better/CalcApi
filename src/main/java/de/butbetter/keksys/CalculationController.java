@@ -36,7 +36,6 @@ public class CalculationController {
             @RequestParam(value = "price") float price,
             @RequestParam(value = "percent") float percent
     ) {
-
         try {
             Float resultWithVAT = calculationValidator.calculateVAT(price, percent);
             logger.info(String.format("(%.2f / 100) * %.2f) + %.2f = %.2f", price, percent, price, resultWithVAT));
@@ -47,7 +46,9 @@ public class CalculationController {
 
         } catch (IllegalArgumentException | ArithmeticException e) {
             logger.error("Message. " + e.getMessage() + " , " + Arrays.toString(e.getStackTrace()));
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            Map<String, String> errorObject = new HashMap<>();
+            errorObject.put("Error", e.getMessage());
+            return new ResponseEntity<>(errorObject, HttpStatus.BAD_REQUEST);
         }
     }
 }
