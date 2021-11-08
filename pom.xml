@@ -14,8 +14,10 @@
 	<name>CalculatorAPI</name>
 	<description>Calculator API</description>
 	<properties>
+		<start-class>de.butbetter.keksys.CalculatorApiApplication</start-class>
 		<java.version>11</java.version>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
