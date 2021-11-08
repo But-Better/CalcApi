@@ -25,7 +25,7 @@ class VATCalculator implements Calculator {
 	 */
 	private float roundTo2DecimalPoints(float value) {
 		try {
-			return new BigDecimal(value).setScale(2, RoundingMode.HALF_UP).floatValue();
+			return new BigDecimal(String.valueOf(value)).setScale(2, RoundingMode.HALF_UP).floatValue();
 		} catch (NumberFormatException e) {
 			String message = "can't round " + value + ", just giving it back";
 			log.error(message);
