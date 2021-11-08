@@ -29,4 +29,9 @@ class VATCalculatorTest {
 	void maxAndNullCalc() {
 		assertEquals(Float.MAX_VALUE, calc.calculateVAT(Float.MAX_VALUE, 0));
 	}
+
+	@Test
+	void infinityResult(){
+		assertEquals(Float.POSITIVE_INFINITY,calc.calculateVAT(Float.MAX_VALUE, 1));
+	}
 }
