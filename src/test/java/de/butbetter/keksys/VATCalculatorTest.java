@@ -46,7 +46,7 @@ class VATCalculatorTest {
 	}
 
 	@Test
-	void NullOfNullCalculation() {
+	void nullOfNullCalculation() {
 		assertEquals(0, calc.calculateVAT(0, 0));
 	}
 
