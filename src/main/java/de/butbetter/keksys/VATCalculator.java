@@ -15,9 +15,9 @@ class VATCalculator implements Calculator {
 
 	@Override
 	public Float calculateVAT(float price, float percent) {
-		float return_value = ((price / 100) * percent) + price;
-		log.info(price + " + " + percent + " = " + return_value);
-		return roundTo2DecimalPoints(return_value);
+		float priceWithVAT = ((price / 100) * percent) + price;
+		log.info(price + " + " + percent + " = " + priceWithVAT);
+		return roundTo2DecimalPoints(priceWithVAT);
 	}
 
 	/**
