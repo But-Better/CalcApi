@@ -22,8 +22,10 @@ class VATCalculator implements Calculator {
 
 	/**
 	 * rounds the value up to a given decimal point
+	 * returns infinity if value is infinity
 	 */
 	private float roundTo2DecimalPoints(float value) {
+		if(Float.isInfinite(value)) return value;
 		return new BigDecimal(value).setScale(2, RoundingMode.HALF_UP).floatValue();
 	}
 }
