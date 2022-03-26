@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>/home/note/IdeaProjects/CalcApi/src/main/java</OriginalElement>
+  <nodes>
+    <node x="21.5" y="107.0">de.butbetter.keksys.VATCalculator</node>
+    <node x="30.138888888888914" y="285.0">de.butbetter.keksys.CalculationValidator</node>
+    <node x="0.0" y="507.0">de.butbetter.keksys.CalculationController</node>
+    <node x="394.25" y="0.0">de.butbetter.keksys.CalculatorApiApplication</node>
+    <node x="119.25" y="0.0">de.butbetter.keksys.Calculator</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="de.butbetter.keksys.CalculationValidator" target="de.butbetter.keksys.VATCalculator" relationship="DEPENDENCY">
+      <point x="0.0" y="-86.0" />
+      <point x="168.6388888888889" y="259.0" />
+      <point x="218.0" y="259.0" />
+      <point x="65.5" y="63.0" />
+    </edge>
+    <edge source="de.butbetter.keksys.VATCalculator" target="de.butbetter.keksys.Calculator" relationship="REALIZATION">
+      <point x="0.0" y="-63.0" />
+      <point x="152.5" y="81.0" />
+      <point x="234.25" y="81.0" />
+      <point x="0.0" y="27.5" />
+    </edge>
+    <edge source="de.butbetter.keksys.CalculationValidator" target="de.butbetter.keksys.Calculator" relationship="REALIZATION">
+      <point x="92.33333333333331" y="-86.0" />
+      <point x="260.97222222222223" y="259.0" />
+      <point x="294.0" y="259.0" />
+      <point x="294.0" y="81.0" />
+      <point x="234.25" y="81.0" />
+      <point x="0.0" y="27.5" />
+    </edge>
+    <edge source="de.butbetter.keksys.CalculationValidator" target="de.butbetter.keksys.VATCalculator" relationship="TO_ONE">
+      <point x="-92.33333333333331" y="-86.0" />
+      <point x="76.3055555555556" y="259.0" />
+      <point x="87.0" y="259.0" />
+      <point x="-65.5" y="63.0" />
+    </edge>
+    <edge source="de.butbetter.keksys.CalculationController" target="de.butbetter.keksys.CalculationValidator" relationship="TO_ONE">
+      <point x="-84.25" y="-74.5" />
+      <point x="84.25" y="482.0" />
+      <point x="99.38888888888891" y="482.0" />
+      <point x="-69.25" y="86.0" />
+    </edge>
+    <edge source="de.butbetter.keksys.CalculationController" target="de.butbetter.keksys.CalculationValidator" relationship="DEPENDENCY">
+      <point x="84.25" y="-74.5" />
+      <point x="252.75" y="482.0" />
+      <point x="237.8888888888889" y="482.0" />
+      <point x="69.25" y="86.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="true" x="314.0" y="328.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
